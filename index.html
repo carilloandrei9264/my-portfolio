@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andrei Christopher M. Carillo | Web and Software Developer</title>
+  <meta name="description" content="Portfolio of Andrei Christopher M. Carillo, an IT student and backend-focused web developer working with Laravel, React and Firebase.">
+  <meta name="author" content="Andrei Christopher M. Carillo">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Andrei Christopher M. Carillo | Web and Software Developer">
+  <meta property="og:description" content="Backend-focused web developer. Laravel, React, Firebase. See my thesis and capstone projects.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Apply the saved theme before first paint so the page never flashes the wrong colors -->
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          theme = saved;
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = "dark";
+        }
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- Shared icons, used with <use href="#i-name"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+      <symbol id="i-api" viewBox="0 0 24 24"><path d="M7 7h11m0 0-3-3m3 3-3 3M17 17H6m0 0 3-3m-3 3 3 3"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12 20 3M16 7l3 3"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></symbol>
+      <symbol id="i-test" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9.5A1.5 1.5 0 0 0 5.8 21h12.4a1.5 1.5 0 0 0 1.3-2.5L14 9V3M7.5 15h9"/></symbol>
+      <symbol id="i-inbox" viewBox="0 0 24 24"><path d="m3 13 3-8h12l3 8v6H3zM3 13h5l1 3h6l1-3h5"/></symbol>
+      <symbol id="i-image-off" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6M4 4l16 16"/></symbol>
+
+      <!-- Brand logos (simplified, drawn in-house so they never depend on a CDN) -->
+      <symbol id="i-html5" viewBox="0 0 24 24"><path fill="#E44D26" d="M3 2l1.6 18L12 22l7.4-2L21 2z"/><path fill="#F16529" d="M12 20.3V3.7h7.3l-1.4 15.9z"/><text x="12" y="16.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff">5</text></symbol>
+      <symbol id="i-css3" viewBox="0 0 24 24"><path fill="#1572B6" d="M3 2l1.6 18L12 22l7.4-2L21 2z"/><path fill="#33A9DC" d="M12 20.3V3.7h7.3l-1.4 15.9z"/><text x="12" y="16.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#fff">3</text></symbol>
+      <symbol id="i-js" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2" fill="#F7DF1E"/><text x="12.5" y="18" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#111">JS</text></symbol>
+      <symbol id="i-tailwind" viewBox="0 0 24 24"><path fill="#38BDF8" d="M12 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.9.2 1.6.9 2.3 1.6C13.7 10.6 15 12 18 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.6-.9-2.3-1.6C16.3 6.2 15 4.8 12 4.8zM6 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.9.2 1.6.900 2.3 1.6C7.7 17.8 9 19.2 12 19.2c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.9-.2-1.6-.9-2.3-1.6C10.3 13.4 9 12 6 12z"/></symbol>
+      <symbol id="i-vite" viewBox="0 0 24 24"><path fill="#8B5CF6" d="M21.6 4.3 12.5 20.6a.6.6 0 0 1-1 0L2.4 4.3a.6.6 0 0 1 .6-.9l9 1.6 9-1.6a.6.6 0 0 1 .6.9z"/><path fill="#FFC517" d="m16.4 3.4-5 .9-.3 5.2 2-.5-.9 3.9 3.7-6.8-2.1.5z"/></symbol>
+      <symbol id="i-php" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="11" ry="6.5" fill="#777BB4"/><text x="12" y="14.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff">php</text></symbol>
+      <symbol id="i-node" viewBox="0 0 24 24"><path fill="#5FA04E" d="M12 1.5 21 6.750v10.5L12 22.5 3 17.250V6.750z"/><text x="12" y="15" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="8" font-weight="700" fill="#fff">JS</text></symbol>
+      <symbol id="i-laravel" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#FF2D20"/><text x="12" y="17.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" fill="#fff">L</text></symbol>
+      <symbol id="i-livewire" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#FB70A9"/><path fill="#fff" d="M8 7h2.5v7.5H16V17H8z"/></symbol>
+      <symbol id="i-react" viewBox="0 0 24 24"><g fill="none" stroke="#61DAFB" stroke-width="1.3"><ellipse cx="12" cy="12" rx="10.5" ry="4.2"/><ellipse cx="12" cy="12" rx="10.5" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10.5" ry="4.2" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="2" fill="#61DAFB"/></symbol>
+      <symbol id="i-mysql" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" fill="#00758F"/><text x="12" y="15.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="9" font-weight="700" fill="#F29111">My</text></symbol>
+      <symbol id="i-sqlite" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="4" fill="#0F80CC"/><text x="12" y="15.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="8.5" font-weight="700" fill="#fff">SQL</text></symbol>
+      <symbol id="i-firebase" viewBox="0 0 24 24"><path fill="#FFA000" d="M4.5 18.5 10.5 7.2 8 3a.5.5 0 0 0-.9.2z"/><path fill="#FFCA28" d="M4.5 18.5 12.8 8.5 10.5 4.2c-.2-.4-.7-.4-.9 0z"/><path fill="#F57C00" d="M4.5 18.5 12 22l7.5-3.5L17.7 5.6c-.1-.4-.6-.5-.8-.1z"/><path fill="#FFA000" d="M12 22 4.5 18.5 12 22z"/></symbol>
+      <symbol id="i-cloudinary" viewBox="0 0 24 24"><path fill="#3448C5" d="M18 19H7.5a5.5 5.5 0 0 1-.8-10.9A6.5 6.5 0 0 1 19 9.8 4.6 4.6 0 0 1 18 19z"/></symbol>
+      <symbol id="i-figma" viewBox="0 0 24 24"><path fill="#F24E1E" d="M12 2H8a3 3 0 0 0 0 6h4z"/><path fill="#FF7262" d="M12 2h4a3 3 0 0 1 0 6h-4z"/><path fill="#A259FF" d="M12 8H8a3 3 0 0 0 0 6h4z"/><circle cx="15" cy="11" r="3" fill="#1ABCFE"/><path fill="#0ACF83" d="M12 14H8a3 3 0 1 0 3 3z"/></symbol>
+      <symbol id="i-git" viewBox="0 0 24 24"><path fill="#F05032" d="M12 1.5 22.5 12 12 22.5 1.5 12z"/><g fill="#fff" stroke="#fff" stroke-width="1.5" stroke-linecap="round"><path fill="none" d="M9 9.5l3 3m0 0V16m0-3.5 3-3"/><circle cx="9" cy="9.5" r="1.4"/><circle cx="12" cy="16" r="1.4"/><circle cx="15" cy="9.5" r="1.4"/></g></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.160 19.490c.5.090.680-.220.680-.480v-1.7c-2.780.6-3.370-1.340-3.370-1.340-.450-1.150-1.110-1.460-1.110-1.460-.900-.620.070-.600.070-.600 1 .070 1.530 1.030 1.530 1.030.890 1.520 2.340 1.080 2.9.830.090-.640.350-1.080.630-1.330-2.220-.250-4.550-1.110-4.550-4.940 0-1.090.390-1.980 1.030-2.680-.100-.250-.450-1.270.1-2.640 0 0 .840-.270 2.750 1.020a9.5 9.5 0 0 1 5 0c1.910-1.290 2.750-1.020 2.750-1.020.550 1.370.2 2.390.1 2.640.640.7 1.030 1.590 1.030 2.680 0 3.840-2.340 4.690-4.570 4.930.360.310.680.920.680 1.850v2.740c0 .270.180.580.690.480A10 10 0 0 0 12 2Z"/></symbol>
+      <symbol id="i-actions" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="#2088FF"/><path fill="#fff" d="M9.5 7.5v9l7-4.5z"/></symbol>
+      <symbol id="i-eslint" viewBox="0 0 24 24"><path fill="none" stroke="#8080F2" stroke-width="2" stroke-linejoin="round" d="M12 2.5 20.5 7.5v9L12 21.5 3.5 16.5v-9z"/><path fill="#4B32C3" d="M12 7.8l4.2 2.4v4.6L12 17.2l-4.2-2.4v-4.6z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Top bar: scrolls away with the page -->
+  <header class="topbar" id="top">
+    <div class="wrap topbar__inner">
+      <div class="media media--avatar" data-media>
+        <img src="assets/profile/profile.jpg" alt="Portrait of Andrei Carillo" width="480" height="480">
+        <span class="media__initials" aria-hidden="true">AC</span>
+      </div>
+
+      <div class="topbar__id">
+        <h1 class="topbar__name">Andrei Christopher M. Carillo</h1>
+        <p class="topbar__line">BS Information Technology, National University – Laguna</p>
+        <p class="topbar__goal">Looking for a web or software developer role</p>
+      </div>
+
+      <div class="topbar__actions">
+        <a class="btn btn--primary" href="assets/Andrei_Carillo_CV.pdf" download>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download CV
+        </a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar: stays at the top while scrolling -->
+  <nav class="nav" aria-label="Page sections">
+    <div class="wrap nav__inner">
+      <ul class="nav__list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle theme-toggle--nav" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- About -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div class="about__text">
+          <h2 id="about-title">About me</h2>
+          <p>I'm an Information Technology student at National University – Laguna, based in Cabuyao, Laguna. I build full-stack web systems and usually end up on the backend: database design, business rules, role-based access and real-time features.</p>
+          <p>My thesis is a manufacturing coordination system for Containerboard &amp; Packaging Company (CPC) that brings four departments into one app. My capstone, TrustHome PH, is a live rental marketplace built with a team of five. I'm now looking for a web or software developer role where I can keep building and learning.</p>
+        </div>
+
+        <div class="about__roles">
+          <h3>My role on each project</h3>
+          <dl class="roles">
+            <div class="roles__row">
+              <dt>Manufacturing Coordination System</dt>
+              <dd>Primary backend developer. Database schema, service layer, approval workflows, reports and tests.</dd>
+            </div>
+            <div class="roles__row">
+              <dt>TrustHome PH</dt>
+              <dd>Primary backend developer on a team of five. Bookings, security rules, trust score, disputes and CI.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section section--tint" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <h2 id="projects-title">Projects</h2>
+
+        <div class="projects" data-list data-empty-title="No projects to show yet" data-empty-text="New work will be added here soon.">
+          <article class="project project--cpc">
+            <div class="media media--large" data-media>
+              <img src="assets/projects/manufacturing-preview.webp" alt="Login screen of the CPC Nexboard Manufacturing Coordination System, over a photo of the CPC factory" width="1400" height="710">
+              <div class="media__status">
+                <p class="media__slow">Still loading. Your connection looks slow.</p>
+                <div class="media__error">
+                  <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-image-off"/></svg>
+                  <p>This preview couldn't load.</p>
+                  <button class="btn btn--small" type="button" data-retry>Try again</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__body">
+              <div class="project__intro">
+                <h3>Manufacturing Coordination System</h3>
+                <p class="project__meta">Thesis project, Jan 2026 – Aug 2026. Built for Containerboard &amp; Packaging Company (CPC), Calamba, Laguna.</p>
+                <p>An internal system that puts sales, production, inventory and logistics in one place, with access limited by department.</p>
+                <ul class="tags" aria-label="Technologies used">
+                  <li>Laravel 12</li><li>Livewire</li><li>Tailwind CSS</li><li>MySQL</li><li>SQLite</li><li>Laravel Reverb</li>
+                </ul>
+                <div class="project__links">
+                  <a class="btn btn--project" href="https://github.com/AndreiCarillo-9264/manufacturing-coordination-system" target="_blank" rel="noopener">View source on GitHub</a>
+                </div>
+                <p class="project__note">No public demo. This system runs on CPC's internal network.</p>
+              </div>
+              <ul class="project__points">
+                <li>Designed the relational schema and service layer for job orders, inventory transfers, finished goods, cycle counts and delivery schedules, including approval workflows.</li>
+                <li>Used queued jobs and events for job-order processing, with real-time updates and notifications through Laravel Reverb and Echo.</li>
+                <li>Added bulk import and export, four PDF reports (inventory, production, deliveries, stock aging) and an audit-trail activity log.</li>
+                <li>Wrote PHPUnit feature tests for access control, reports, imports and real-time broadcasting.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project project--trusthome">
+            <div class="media media--large" data-media>
+              <img src="assets/projects/trusthome-preview.webp" alt="TrustHome PH home page with the headline 'Find a place you can actually trust' and a search box" width="1400" height="710">
+              <div class="media__status">
+                <p class="media__slow">Still loading. Your connection looks slow.</p>
+                <div class="media__error">
+                  <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-image-off"/></svg>
+                  <p>This preview couldn't load.</p>
+                  <button class="btn btn--small" type="button" data-retry>Try again</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__body">
+              <div class="project__intro">
+                <h3>TrustHome PH</h3>
+                <p class="project__meta">Capstone project, Jul 2026 – Oct 2026. Team of five.</p>
+                <p>A Philippine rental marketplace with admin-verified listings, bookings and ratings. Listings are ranked by completed bookings and ratings, not by who pays.</p>
+                <ul class="tags" aria-label="Technologies used">
+                  <li>React</li><li>Vite</li><li>Firebase</li><li>Cloudinary</li><li>GitHub Actions</li>
+                </ul>
+                <div class="project__links">
+                  <a class="btn btn--project btn--solid" href="https://trusthome-ph.web.app" target="_blank" rel="noopener">Open live demo</a>
+                  <a class="btn btn--project" href="https://github.com/carilloandrei9264/team-idle" target="_blank" rel="noopener">View source on GitHub</a>
+                </div>
+              </div>
+              <ul class="project__points">
+                <li>Built the booking workflow with a per-listing lease and Firestore transactions, so the same listing can't be double-booked.</li>
+                <li>Wrote Firestore and Storage security rules for renter, owner and admin roles.</li>
+                <li>Implemented the trust and fairness score, dispute lifecycle, notifications, owner dashboard and admin review tools.</li>
+                <li>Set up GitHub Actions to run unit tests, security-rule tests, lint and build checks on every push and pull request.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <h2 id="skills-title">Skills</h2>
+        <div class="skills" data-list data-empty-title="No skills listed yet" data-empty-text="This section will be filled in soon.">
+          <div class="skills__group">
+            <h3>Frontend</h3>
+            <ul class="tags"><li><img class="skill__icon" src="assets/skills/html5.svg" alt="" aria-hidden="true">HTML</li><li><img class="skill__icon" src="assets/skills/css.svg" alt="" aria-hidden="true">CSS</li><li><img class="skill__icon" src="assets/skills/javascript.svg" alt="" aria-hidden="true">JavaScript</li><li><img class="skill__icon" src="assets/skills/tailwindcss.svg" alt="" aria-hidden="true">Tailwind CSS</li><li><img class="skill__icon" src="assets/skills/vite.svg" alt="" aria-hidden="true">Vite</li></ul>
+          </div>
+          <div class="skills__group">
+            <h3>Backend</h3>
+            <ul class="tags"><li><img class="skill__icon" src="assets/skills/php.svg" alt="" aria-hidden="true">PHP</li><li><img class="skill__icon" src="assets/skills/nodedotjs.svg" alt="" aria-hidden="true">Node.js</li><li><svg class="skill__icon skill__icon--line" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-api"/></svg>REST APIs</li><li><img class="skill__icon" src="assets/skills/firebase.svg" alt="" aria-hidden="true">Firebase Cloud Functions</li><li><img class="skill__icon" src="assets/skills/laravel.svg" alt="" aria-hidden="true">Laravel Reverb / Echo</li></ul>
+          </div>
+          <div class="skills__group">
+            <h3>Frameworks and libraries</h3>
+            <ul class="tags"><li><img class="skill__icon" src="assets/skills/laravel.svg" alt="" aria-hidden="true">Laravel 12</li><li><img class="skill__icon" src="assets/skills/livewire.svg" alt="" aria-hidden="true">Livewire</li><li><img class="skill__icon" src="assets/skills/react.svg" alt="" aria-hidden="true">React</li></ul>
+          </div>
+          <div class="skills__group">
+            <h3>Databases and cloud services</h3>
+            <ul class="tags"><li><img class="skill__icon" src="assets/skills/sql.svg" alt="" aria-hidden="true">SQL</li><li><img class="skill__icon" src="assets/skills/mysql.svg" alt="" aria-hidden="true">MySQL</li><li><img class="skill__icon" src="assets/skills/sqlite.svg" alt="" aria-hidden="true">SQLite</li><li><img class="skill__icon" src="assets/skills/firebase.svg" alt="" aria-hidden="true">Firestore</li><li><svg class="skill__icon skill__icon--line" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-key"/></svg>Firebase Authentication</li><li><svg class="skill__icon skill__icon--line" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg>Firebase Hosting</li><li><img class="skill__icon" src="assets/skills/cloudinary.svg" alt="" aria-hidden="true">Cloudinary</li></ul>
+          </div>
+          <div class="skills__group">
+            <h3>Design</h3>
+            <ul class="tags"><li><img class="skill__icon" src="assets/skills/figma.svg" alt="" aria-hidden="true">Figma</li></ul>
+          </div>
+          <div class="skills__group">
+            <h3>Testing and tools</h3>
+            <ul class="tags"><li><img class="skill__icon" src="assets/skills/git.svg" alt="" aria-hidden="true">Git</li><li><img class="skill__icon" src="assets/skills/github.svg" alt="" aria-hidden="true">GitHub</li><li><img class="skill__icon" src="assets/skills/githubactions.svg" alt="" aria-hidden="true">GitHub Actions</li><li><svg class="skill__icon skill__icon--line" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-test"/></svg>PHPUnit</li><li><img class="skill__icon" src="assets/skills/eslint.svg" alt="" aria-hidden="true">ESLint</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section section--tint" id="certifications" aria-labelledby="certifications-title">
+      <div class="wrap">
+        <h2 id="certifications-title">Certifications</h2>
+        <ul class="certs" data-list data-empty-title="No certifications yet" data-empty-text="New certifications will appear here once earned.">
+          <li class="cert card">
+            <div class="media media--badge" data-media>
+              <img src="assets/certifications/badge-network-security.png" alt="Pearson IT Specialist Network Security badge" width="240" height="240">
+            </div>
+            <div>
+              <h3>IT Specialist: Network Security</h3>
+              <p>Certiport, a Pearson VUE Business</p>
+              <p class="cert__date">May 2026</p>
+            </div>
+          </li>
+          <li class="cert card">
+            <div class="media media--badge" data-media>
+              <img src="assets/certifications/badge-databases.png" alt="Pearson IT Specialist Databases badge" width="240" height="240">
+            </div>
+            <div>
+              <h3>IT Specialist: Databases</h3>
+              <p>Certiport, a Pearson VUE Business</p>
+              <p class="cert__date">March 2025</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education" aria-labelledby="education-title">
+      <div class="wrap">
+        <h2 id="education-title">Education</h2>
+        <div class="edu">
+          <h3>Bachelor of Science in Information Technology</h3>
+          <p>National University – Laguna</p>
+          <p class="edu__date">2022 – 2027 (expected)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--tint" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Contact</h2>
+        <p>I'm open to web and software developer roles. Email is the fastest way to reach me.</p>
+        <ul class="contact__links">
+          <li>
+            <a class="card" href="mailto:carilloandrei9264@gmail.com">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 7 8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <span>Email<small>carilloandrei9264@gmail.com</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="https://github.com/carilloandrei9264" target="_blank" rel="noopener">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+              <span>GitHub<small>github.com/carilloandrei9264</small></span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="https://www.linkedin.com/in/carilloandrei9264" target="_blank" rel="noopener">
+              <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.05c.53-1 1.84-2.04 3.78-2.04 4.04 0 4.79 2.66 4.79 6.12V21h-4v-4.81c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.84 1.25-1.84 2.54V21h-4V9.75Z"/></svg>
+              <span>LinkedIn<small>linkedin.com/in/carilloandrei9264</small></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>&copy; <span data-year>2026</span> Andrei Christopher M. Carillo</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+  <!-- Connection messages (offline, slow, back online) -->
+  <div class="net-banner" data-net-banner hidden role="status" aria-live="polite">
+    <p data-net-message></p>
+    <button class="net-banner__close" type="button" data-net-close aria-label="Dismiss message">&times;</button>
+  </div>
+</body>
+</html>
