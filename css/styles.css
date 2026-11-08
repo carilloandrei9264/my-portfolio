@@ -15,6 +15,7 @@
   --accent: #0b6b5f;          /* teal, from TrustHome PH */
   --accent-ink: #ffffff;      /* text on top of --accent */
   --cpc: #9a3d12;             /* rust, from the CPC brand */
+  --queueit: #1e3a8a;         /* indigo, Laravel / queue system */
 
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -38,6 +39,7 @@
   --accent: #4fd1bc;
   --accent-ink: #06211c;
   --cpc: #e8946a;
+  --queueit: #93c5fd;
 }
 
 /* ==========================================================================
@@ -448,6 +450,7 @@ svg.skill__icon--line,
   border-top: 1px solid var(--line);
 }
 .project--cpc { --p: var(--cpc); }
+.project--queueit { --p: var(--queueit); }
 .projects > .project:first-child { padding-top: 0.5rem; border-top: 0; }
 
 .project__body {

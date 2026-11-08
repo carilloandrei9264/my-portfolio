@@ -8,7 +8,7 @@
   <meta name="author" content="Andrei Christopher M. Carillo">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Andrei Christopher M. Carillo | Web and Software Developer">
-  <meta property="og:description" content="Backend-focused web developer. Laravel, React, Firebase. See my thesis and capstone projects.">
+  <meta property="og:description" content="Backend-focused web developer. Laravel, React, Firebase. Thesis, capstone and university queue system projects.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <!-- Apply the saved theme before first paint so the page never flashes the wrong colors -->
@@ -122,7 +122,7 @@
         <div class="about__text">
           <h2 id="about-title">About me</h2>
           <p>I'm an Information Technology student at National University – Laguna, based in Cabuyao, Laguna. I build full-stack web systems and usually end up on the backend: database design, business rules, role-based access and real-time features.</p>
-          <p>My thesis is a manufacturing coordination system for Containerboard &amp; Packaging Company (CPC) that brings four departments into one app. My capstone, TrustHome PH, is a live rental marketplace built with a team of five. I'm now looking for a web or software developer role where I can keep building and learning.</p>
+          <p>My thesis is a manufacturing coordination system for Containerboard &amp; Packaging Company (CPC) that brings four departments into one app. My capstone, TrustHome PH, is a live rental marketplace built with a team of five. I also rebuilt NU Queue-It, a university queue management system from my Web Programming course. I'm now looking for a web or software developer role where I can keep building and learning.</p>
         </div>
 
         <div class="about__roles">
@@ -135,6 +135,10 @@
             <div class="roles__row">
               <dt>TrustHome PH</dt>
               <dd>Primary backend developer on a team of five. Bookings, security rules, trust score, disputes and CI.</dd>
+            </div>
+            <div class="roles__row">
+              <dt>NU Queue-It</dt>
+              <dd>Solo developer. Full redesign and rebuild of a course project into a documented Laravel MVP with roles, tickets and public display.</dd>
             </div>
           </dl>
         </div>
@@ -213,6 +217,41 @@
                 <li>Wrote Firestore and Storage security rules for renter, owner and admin roles.</li>
                 <li>Implemented the trust and fairness score, dispute lifecycle, notifications, owner dashboard and admin review tools.</li>
                 <li>Set up GitHub Actions to run unit tests, security-rule tests, lint and build checks on every push and pull request.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project project--queueit">
+            <div class="media media--large" data-media>
+              <img src="assets/projects/queueit-preview.webp" alt="NU Queue-It public queue display and staff console screens" width="1400" height="710">
+              <div class="media__status">
+                <p class="media__slow">Still loading. Your connection looks slow.</p>
+                <div class="media__error">
+                  <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-image-off"/></svg>
+                  <p>This preview couldn't load.</p>
+                  <button class="btn btn--small" type="button" data-retry>Try again</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="project__body">
+              <div class="project__intro">
+                <h3>NU Queue-It</h3>
+                <p class="project__meta">Web Programming course project (v2 rebuild). Original Feb–Mar 2025; rebuilt as a documented Laravel MVP.</p>
+                <p>A university office queue system for students, staff and admins. Students take a service ticket, staff manage their department’s waiting line, and a public display shows who is being served. First pilot target: Admission (AMS).</p>
+                <ul class="tags" aria-label="Technologies used">
+                  <li>Laravel 13</li><li>PHP 8.3+</li><li>Blade</li><li>MySQL / MariaDB</li><li>PHPUnit</li>
+                </ul>
+                <div class="project__links">
+                  <a class="btn btn--project" href="https://github.com/carilloandrei9264/university-queue-system" target="_blank" rel="noopener">View source on GitHub</a>
+                </div>
+                <p class="project__note">Local MVP. University sign-in adapters and real-time (Reverb) updates are deferred until pilot hosting is known.</p>
+              </div>
+              <ul class="project__points">
+                <li>Rebuilt an earlier course prototype end-to-end: role-based accounts (student, staff, admin), department and service management, and ticket lifecycle with daily-resetting numbers.</li>
+                <li>Staff can call, complete, skip and recall tickets limited to their department; students create and cancel waiting tickets; a public board shows the ticket being served.</li>
+                <li>Added automatic queue refresh every five seconds, a read-only admin activity log, generated temporary passwords with forced change at first sign-in, and responsive UI states (loading, empty, offline, error, validation).</li>
+                <li>Documented architecture, schema, requirements, test plan and deployment; automated tests with PHPUnit (SQLite) plus a MariaDB integration profile.</li>
               </ul>
             </div>
           </article>
